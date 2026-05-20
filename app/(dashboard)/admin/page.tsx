@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { Users, Library, BookmarkCheck, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function AdminDashboard() {
@@ -94,6 +95,18 @@ export default function AdminDashboard() {
             Admin Overview
           </h1>
           <p className="text-gray-400 font-medium mt-1">Manage library inventory, requests, and students.</p>
+        </div>
+        <div className="flex gap-3">
+          <Link href="/admin/books">
+            <Button className="font-heading uppercase border-2 border-white bg-primary text-black hover:bg-primary/90 brutal-shadow-sm brutal-hover rounded-none">
+              Manage Books
+            </Button>
+          </Link>
+          <Link href="/admin/requests">
+            <Button className="font-heading uppercase border-2 border-white bg-accent text-black hover:bg-accent/90 brutal-shadow-sm brutal-hover rounded-none">
+              Borrow Requests
+            </Button>
+          </Link>
         </div>
       </div>
 
